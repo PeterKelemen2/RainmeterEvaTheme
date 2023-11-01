@@ -1,5 +1,7 @@
 ## Elementary
 
+Put this under `Rainmeter/Skins/Elementary`
+
 Some simple, clean [Rainmeter][rainmeternet] skins.
 
 These skins were built and tested using Rainmeter version _4.0.0_, and the installer requires version 4.0.0 or later.
