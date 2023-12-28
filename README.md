@@ -15,7 +15,7 @@ Customized parts of skin:
 
 Put this under `Documents/Rainmeter/Skins/Elementary/`
 
-Please refer to this [Tutorial][hwinfohwinfotutorial].
+Please refer to this [Tutorial][hwinfotutorial].
 
 
 Some simple, clean [Rainmeter][rainmeternet] skins.
