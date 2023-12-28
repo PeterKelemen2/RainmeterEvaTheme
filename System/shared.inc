@@ -6,6 +6,7 @@ ContextAction2=[!WriteKeyValue Variables showUsedDisk (abs(#showUsedDisk#-1)) "#
 ContextTitle3="Edit hard drive letter"
 ContextAction3=["#CURRENTPATH#shared.inc"]
 
+
 ;           _   _   _                  __   __
 ;  ___  ___| |_| |_(_)_ __   __ _ ___  \ \  \ \
 ; / __|/ _ \ __| __| | '_ \ / _` / __|  \ \  \ \
@@ -15,11 +16,16 @@ ContextAction3=["#CURRENTPATH#shared.inc"]
 
 [Variables]
 ; Set your hard drive letter here, e.g. "drive=C:", "drive="F:", etc.
+drive1=C:\
+drive2=D:\
+drive3=E:\
+drive4=F:\
 ; (#PROGRAMDRIVE# is the drive where Rainmeter is installed)
 drive=#PROGRAMDRIVE#
 
+
 ; Set to '1' to show free RAM, or '0' to show used RAM
-showFreeMem=1
+showFreeMem=0
 
 ; Set to '1' to show used disk space, or '0' to show free disk space
 showUsedDisk=0
@@ -41,18 +47,124 @@ Measure=Calc
 Formula=#showUsedDisk#
 Substitute="0":"Switch to used disk","1":"Switch to free disk"
 
+[MeasureCPUUsage]
+Measure=Registry
+RegHKey=HKEY_CURRENT_USER
+RegKey=SOFTWARE\HWiNFO64\VSB
+RegValue=Value2
+MinValue=0
+MaxValue=100
+
+[MeasureCPUTemp]
+Measure=Registry
+RegHKey=HKEY_CURRENT_USER
+RegKey=SOFTWARE\HWiNFO64\VSB
+RegValue=Value3
+
+[MeasureCPUFreq]
+Measure=Registry
+RegHKey=HKEY_CURRENT_USER
+RegKey=SOFTWARE\HWiNFO64\VSB
+RegValue=Value1
+
 [msrCPU]
 Measure=CPU
 Processor=0
+
+;==================================================================
+
+[MeasureGPUUsage]
+Measure=Registry
+RegHKey=HKEY_CURRENT_USER
+RegKey=SOFTWARE\HWiNFO64\VSB
+RegValue=Value10
+MinValue=0
+MaxValue=100
+
+[MeasureGPUUsageRaw]
+Measure=Registry
+RegHKey=HKEY_CURRENT_USER
+RegKey=SOFTWARE\HWiNFO64\VSB
+RegValue=ValueRaw10
+MinValue=0
+MaxValue=100
+
+[MeasureGPUTemp]
+Measure=Registry
+RegHKey=HKEY_CURRENT_USER
+RegKey=SOFTWARE\HWiNFO64\VSB
+RegValue=Value5
+
+[MeasureGPUFreq]
+Measure=Registry
+RegHKey=HKEY_CURRENT_USER
+RegKey=SOFTWARE\HWiNFO64\VSB
+RegValue=Value8
+
+;==================================================================
+
+[MeasureNetUp]
+Measure=Registry
+RegHKey=HKEY_CURRENT_USER
+RegKey=SOFTWARE\HWiNFO64\VSB
+RegValue=Value12
+
+[MeasureNetDown]
+Measure=Registry
+RegHKey=HKEY_CURRENT_USER
+RegKey=SOFTWARE\HWiNFO64\VSB
+RegValue=Value11
+
+;==================================================================
+
+[MeasureUsedMemory]
+Measure=PhysicalMemory
+
+;==================================================================
+
+
+[msrCPUTemp]
+Measure=Plugin
+Plugin=CoreTemp
+CoreTempType=Temperature
+
+[msrCPUSpeed]
+Measure=Plugin
+Plugin=CoreTemp
+CoreTempType=CpuSpeed
+
+[msrGPU]
+Measure=Plugin
+Plugin=UsageMonitor
+Alias=GPU
+Index=0
 
 [msrMem]
 Measure=PhysicalMemory
 InvertMeasure=#showFreeMem#
 UpdateDivider=3
 
-[msrDrive]
+[msrDrive1]
 Measure=FreeDiskSpace
-Drive=#drive#
+Drive=#drive1#
+InvertMeasure=#showUsedDisk#
+UpdateDivider=10
+
+[msrDrive2]
+Measure=FreeDiskSpace
+Drive=#drive2#
+InvertMeasure=#showUsedDisk#
+UpdateDivider=10
+
+[msrDrive3]
+Measure=FreeDiskSpace
+Drive=#drive3#
+InvertMeasure=#showUsedDisk#
+UpdateDivider=10
+
+[msrDrive4]
+Measure=FreeDiskSpace
+Drive=#drive4#
 InvertMeasure=#showUsedDisk#
 UpdateDivider=10
 
