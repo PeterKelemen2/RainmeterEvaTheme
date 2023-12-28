@@ -7,8 +7,11 @@
 - Time (hms)
 
 ### Dependencies
-- Rainmeter
-- HWiNFO64
+- [Rainmeter][rainmeternet]
+- [HWiNFO64][hwinfo]
+
+[rainmeternet]: <http://www.rainmeter.net> "Rainmeter dot net"
+[hwinfo]: <https://www.hwinfo.com/download/> "HWiNFO64 Download Page" 
 
 
 ### Installation
