@@ -1,7 +1,7 @@
 ## Elementary Evangelion Skin
 
-### Updated
-Customized parts of skin:
+
+### Customized parts of skin:
 - Date (wmd)
 - System (v)
 - Time (hms)
