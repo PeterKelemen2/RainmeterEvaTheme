@@ -5,6 +5,8 @@ ContextTitle2="[msrDiskContextString]"
 ContextAction2=[!WriteKeyValue Variables showUsedDisk (abs(#showUsedDisk#-1)) "#CURRENTPATH#shared.inc"][!Refresh #CURRENTCONFIG#]
 ContextTitle3="Edit hard drive letter"
 ContextAction3=["#CURRENTPATH#shared.inc"]
+ContextTitle4="Change Label color"
+ContextAction4=["#CURRENTPATH#system-v.ini"]
 
 
 ;           _   _   _                  __   __
